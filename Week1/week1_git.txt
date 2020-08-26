@@ -1,0 +1,47 @@
+Jai Mahajan Week-1
+git init
+git status
+touch index.html
+touch app.js
+git add -A
+git commit -m "push to master"
+git status
+git remote add origin https://github.com/jaimahajan1997/pjp2.git
+git pull
+git push -u origin master
+git pull
+git pull origin master
+git branch Feature
+git checkout Feature
+git add -A
+git commit -m "Feature"
+git push origin Feature
+git branch dev
+git checkout dev
+git add -A
+git commit -m "dev"
+git push -u origin dev
+git branch delivery
+git checkout delivery
+git add -A
+git commit -m "delivery"
+git push origin delivery
+
+git branch product
+git checkout product
+git add .
+git commit -m "product"
+git push origin product
+git branch QA
+git checkout QA
+git add -A
+git commit -m "QA"
+git push origin QA
+git checkout master
+git pull
+git pull origin master
+git fetch
+git rebase master
+git checkout master
+git merge QA
+git commit -m "merged"

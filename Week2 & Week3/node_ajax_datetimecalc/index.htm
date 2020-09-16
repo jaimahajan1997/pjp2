@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Date time Calculator</title>
+</head>
+
+<body>
+    <center>
+        <h1 style="color:blue;">Date Time Calculator </h1>
+        <form name="form" id="form">
+            <tr>
+                <td><label for="date">Date:</label></td>
+                <td><input id="date" type="text" name="date" placeholder="yyyy-mm-dd"></td>
+            </tr>
+            <br>
+            <tr>
+                <td><label for="number">value of N:</label></td>
+                <td><input type="text" id = "number" name="number" placeholder="0 (default)" /></td>
+            </tr>
+            <br>
+            <tr>
+                <td><label for="options">Options:</label></td>
+                <td><select id="options" name="options">
+                        <option>Tomorrow</option>
+                        <option>Yesterday</option>
+                        <option>Day after tomorrow</option>
+                        <option>Day before yesterday</option>
+                        <option>Day of the week</option>
+                        <option>Date N weeks earlier</option>
+                        <option>Date N weeks later</option>
+                        <option>Date Last week</option>
+                        <option>Date Next week</option>
+                        <option>date N months earlier</option>
+                        <option>Date N months later</option>
+                        <option>Date Last month</option>
+                        <option>Date Next month</option>
+                        <option>Date N years earlier</option>
+                        <option>Date N years later</option>
+                        <option>Date Last year</option>
+                        <option>Date Next year</option>
+                        <option>Add N days</option>
+                        <option>Add N months</option>
+                        <option>Add N Weeks</option>
+                        <option>Add N years</option>
+                        <option>Minus N days</option>
+                        <option>Minus N months</option>
+                        <option>Minus N Weeks</option>
+                        <option>Minus N years</option>
+                    </select></td>
+            </tr>
+            <br>
+            <input type="submit" name="button" value="submit" id="submit">
+        </form>
+        <div id='output'></div>
+    </center>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $('#form').submit(function(e){
+            e.preventDefault();
+
+            var url = "/post-datequery";
+        var vars = {
+            date : $('#date').val(),
+            number : $('#number').val(),
+            options : $('#options').val()
+        }
+        $.post(url,vars, function(data, status, xhr){
+            console.log(xhr);
+            $('#output').html(data);
+        })
+        })
+       
+    })
+</script>
+
+</body>
+</html>
